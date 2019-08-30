@@ -1,0 +1,11 @@
+node_modules/
+src/
+.editorconfig
+.gitignore
+.npmignore
+.nvmrc
+.npmrc
+.prettierrc
+jasmine*
+tsconfig*
+tslint.json

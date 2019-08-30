@@ -1,0 +1,58 @@
+{
+  "name": "@emartech/typescript-package-example",
+  "description": "typescript-package-example",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "code-style": "tslint --project ./tsconfig.json --format stylish",
+    "prettier": "prettier --write 'src/**/*.{ts,tsx}'",
+    "release": "CI=true semantic-release",
+    "test": "jasmine --config=jasmine.json",
+    "test:watch": "nodemon -e ts -x 'npm test --silent'"
+  },
+  "release": {
+    "analyzeCommits": "@bubltechnology/customizable-commit-analyzer"
+  },
+  "config": {
+    "commitTypeMap": {
+      "chore": "patch",
+      "test": "patch",
+      "refactor": "patch"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emartech/typescript-package-example.git"
+  },
+  "homepage": "https://github.com/emartech/typescript-package-example#readme",
+  "bugs": {
+    "url": "https://github.com/emartech/typescript-package-example/issues"
+  },
+  "author": "Emarsys",
+  "license": "MIT",
+  "engines": {
+    "node": "10.16.3"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@bubltechnology/customizable-commit-analyzer": "1.0.2-0",
+    "@types/jasmine": "3.4.0",
+    "@types/jasmine-expect": "3.8.1",
+    "@types/node": "12.7.3",
+    "jasmine": "3.4.0",
+    "jasmine-expect": "4.0.3",
+    "nodemon": "1.19.1",
+    "prettier": "1.18.2",
+    "semantic-release": "15.13.24",
+    "ts-node": "8.3.0",
+    "tslint": "5.19.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-eslint-rules": "5.4.0",
+    "tslint-plugin-prettier": "2.0.1",
+    "typescript": "3.6.2"
+  }
+}
