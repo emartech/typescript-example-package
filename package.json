@@ -12,14 +12,19 @@
     "test:watch": "nodemon -e ts -x 'npm test --silent'"
   },
   "release": {
-    "analyzeCommits": "@bubltechnology/customizable-commit-analyzer"
-  },
-  "config": {
-    "commitTypeMap": {
-      "chore": "patch",
-      "test": "patch",
-      "refactor": "patch"
-    }
+    "plugins": [
+      ["@semantic-release/commit-analyzer", {
+        "preset": "angular",
+        "releaseRules": [
+          { "type": "chore", "release": "patch" },
+          { "type": "test", "release": "minor" },
+          { "type": "refactor", "release": "patch" }
+        ]
+      }],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
   },
   "publishConfig": {
     "access": "public"
@@ -39,7 +44,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@bubltechnology/customizable-commit-analyzer": "1.0.2-0",
     "@types/jasmine": "3.4.0",
     "@types/jasmine-expect": "3.8.1",
     "@types/node": "12.7.3",
