@@ -1,6 +1,6 @@
 {
-  "name": "@emartech/typescript-package-example",
-  "description": "typescript-package-example",
+  "name": "@emartech/typescript-example",
+  "description": "typescript-example-package",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -13,14 +13,26 @@
   },
   "release": {
     "plugins": [
-      ["@semantic-release/commit-analyzer", {
-        "preset": "angular",
-        "releaseRules": [
-          { "type": "chore", "release": "patch" },
-          { "type": "test", "release": "minor" },
-          { "type": "refactor", "release": "patch" }
-        ]
-      }],
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "type": "chore",
+              "release": "patch"
+            },
+            {
+              "type": "test",
+              "release": "minor"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm",
       "@semantic-release/github"
@@ -31,11 +43,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emartech/typescript-package-example.git"
+    "url": "git+https://github.com/emartech/typescript-example-package.git"
   },
-  "homepage": "https://github.com/emartech/typescript-package-example#readme",
+  "homepage": "https://github.com/emartech/typescript-example-package#readme",
   "bugs": {
-    "url": "https://github.com/emartech/typescript-package-example/issues"
+    "url": "https://github.com/emartech/typescript-example-package/issues"
   },
   "author": "Emarsys",
   "license": "MIT",
@@ -44,19 +56,19 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jasmine": "3.4.0",
+    "@types/jasmine": "3.4.1",
     "@types/jasmine-expect": "3.8.1",
-    "@types/node": "12.7.3",
-    "jasmine": "3.4.0",
+    "@types/node": "12.7.8",
+    "jasmine": "3.5.0",
     "jasmine-expect": "4.0.3",
-    "nodemon": "1.19.1",
+    "nodemon": "1.19.2",
     "prettier": "1.18.2",
     "semantic-release": "15.13.24",
-    "ts-node": "8.3.0",
-    "tslint": "5.19.0",
+    "ts-node": "8.4.1",
+    "tslint": "5.20.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-eslint-rules": "5.4.0",
     "tslint-plugin-prettier": "2.0.1",
-    "typescript": "3.6.2"
+    "typescript": "3.6.3"
   }
 }
