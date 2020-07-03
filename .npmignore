@@ -9,3 +9,4 @@ src/
 jasmine*
 tsconfig*
 tslint.json
+*spec*
